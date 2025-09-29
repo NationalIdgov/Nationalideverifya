@@ -18,16 +18,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
     }
     header img {
       height: 40px;
     }
-    nav {
-      display: flex;
-      gap: 20px;
-    }
     nav a {
+      margin-left: 20px;
       text-decoration: none;
       font-size: 14px;
       color: #555;
@@ -35,42 +31,37 @@
     nav a:hover {
       color: #1e40af;
     }
-    /* Hamburger button */
-    .menu-toggle {
-      display: none;
-      font-size: 26px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    /* Mobile menu hidden by default */
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      gap: 15px;
+    main {
+      max-width: 900px;
+      margin: 40px auto;
       background: #fff;
-      position: absolute;
-      top: 65px;
-      right: 20px;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     }
-    .mobile-nav a {
-      font-size: 16px;
-      color: #333;
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
     }
-    .mobile-nav a:hover {
-      color: #1e40af;
+    .info {
+      display: flex;
+      gap: 30px;
     }
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        display: none; /* hide desktop nav */
-      }
-      .menu-toggle {
-        display: block;
-      }
+    .info img {
+      width: 130px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 40px;
+      font-size: 14px;
+    }
+    .details span {
+      font-weight: bold;
     }
   </style>
 </head>
@@ -81,22 +72,12 @@
     <!-- Logo -->
     <img src="snipping.png" alt="Pambansang ID eVerify Logo">
 
-    <!-- Desktop Nav -->
+    <!-- Navigation -->
     <nav>
       <a href="#">Bersipikasyon ng Customer</a>
       <a href="#">Profile ng Organisasyon</a>
       <a href="#">Sistema ng Aplikasyon</a>
     </nav>
-
-    <!-- Mobile Hamburger -->
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-    <!-- Mobile Nav -->
-    <div class="mobile-nav" id="mobileMenu">
-      <a href="#">Bersipikasyon ng Customer</a>
-      <a href="#">Profile ng Organisasyon</a>
-      <a href="#">Sistema ng Aplikasyon</a>
-    </div>
   </header>
 
   <!-- Main Content -->
@@ -107,20 +88,8 @@
       <img src="mypic.jfif" alt="Larawan ng Customer">
 
       <!-- Details -->
- <div class="details"> <p><span>Digital ID:</span> 
-    VS5J91</p> <p><span>Pangalan:</span> ADRIAN</p>
-     <p><span>Gitnang Apelyido:</span> GARCIA</p>
-     <p><span>Apelyido:</span> DELACRUZ</p>
-      <p><span>Kasarian:</span> MALE</p> <p><span>Petsa ng Kapanganakan:</span> MAY 23, 2004</p> <p><span>Tirahan:</span> BALIBAGO, DIAMOND SUBD, ANGELES CITY</p> <p><span>Katayuang Sibil:</span> SINGLE</p> <p><span>Numero ng Telepono:</span> 639287240339</p> <p><span>Uri ng Dugo:</span> O+</p> </div>
+<div class="details"> <p><span>Digital ID:</span> VS5J91</p> <p><span>Pangalan:</span> ADRIAN</p> <p><span>Gitnang Apelyido:</span> GARCIA</p> <p><span>Apelyido:</span> DELACRUZ</p> <p><span>Kasarian:</span> MALE</p> <p><span>Petsa ng Kapanganakan:</span> MAY 23, 2004</p> <p><span>Tirahan:</span> BALIBAGO, DIAMOND SUBD, ANGELES CITY</p> <p><span>Katayuang Sibil:</span> SINGLE</p> <p><span>Numero ng Telepono:</span> 639287240339</p> <p><span>Uri ng Dugo:</span> O+</p> </div>
   </main>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    }
-  </script>
 
 </body>
 </html>
-
